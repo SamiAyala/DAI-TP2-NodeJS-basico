@@ -25,11 +25,22 @@ alumno1.mostrar()
 alumno2.mostrar()
 
 import { copiar } from './copyFile.js'
-console.log("EJ 04: ");
-
 copiar("prueba1.txt","prueba2.txt")
 
 import { buscarMoneda } from './country-to-currency.js'
 console.log("EJ 07: ");
 
 buscarMoneda('AR')
+
+import config from './dbconfig.js';
+import sql from 'mssql';
+
+console.log("EJ sql Select: ")
+let pool = await sql.connect(config);
+let result = await pool.request().query("SELECT * from Pizzas");
+
+console.log(result.recordsets.length)
+console.log(result.recordsets[0].length)
+
+import {getById} from './pizzaServices.js'
+console.log(getById(5))

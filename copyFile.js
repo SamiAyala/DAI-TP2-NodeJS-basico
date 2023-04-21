@@ -5,7 +5,7 @@ export function copiar(source,destination) {
     if(error) throw error;
     fs.writeFile(destination,data,(error) => {
       if (error) throw error;
-      console.log(`${source} ha sido copiado con exito en ${destination}`)
+      console.log(`EJ 04:\n${source} ha sido copiado con exito en ${destination}`)
     })
   })
 }
